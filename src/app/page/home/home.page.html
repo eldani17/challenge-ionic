@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+        <ion-text color="light">
+          <ion-text color="light" class="fw700">Challenge Ionic</ion-text>
+        </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+        <ion-icon name="logo-buffer"></ion-icon>
+        <ion-badge color="dark" slot="end">{{list.length}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="dark">
+    <ion-searchbar placeholder="Enter a data to filter" animated (ionChange)="search($event)"></ion-searchbar>
+  </ion-toolbar>
+  <div color="dark" class="input-create">
+    <ion-toolbar color="secondary" class="radius">
+      <ion-input placeholder="Create an element" color="dark" required maxlength="25" [(ngModel)]="newElement.name"></ion-input>
+      <ion-buttons slot="end">
+        <ion-button size="small" shape="round" color="dark" *ngIf="editFlag" (click)="closeElement()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+        <ion-button size="small" shape="round" color="dark" (click)="addElement()">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content padding class="animated fadeIn">
+  <ion-reorder-group [disabled]="false" (ionItemReorder)="reorder($event)">
+    <ion-card class="no-radius" *ngFor="let item of list | search: textSearch; let i=index">
+      <ion-item lines="none" class="no-padding" color="medium">
+        <div class="card-leyenda">
+          <ion-label (click)="editElement(i)">
+            <h2 no-margin class="fw500 no-margin">
+              <ion-text color="light">{{item.name}}</ion-text>
+            </h2>
+          </ion-label>
+        </div>
+        <div class="card-delete" (click)="deleteElement(i)">
+          <ion-icon class="icon-dm" name="trash"></ion-icon>
+        </div>
+        <div class="card-reorder">
+          <ion-reorder class="ion-no-margin" slot="end">
+            <ion-icon class="icon-dm" name="move"></ion-icon>
+          </ion-reorder>
+        </div>
+      </ion-item>
+    </ion-card>
+  </ion-reorder-group>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" class="footer-toolbar">
+    <ion-fab *ngIf="list.length>0" vertical="bottom" horizontal="center" edge class="animated" class="ion-fab-custom">
+      <ion-fab-button color="primary" size="small" (click)="deleteAll()">
+        <ion-icon color="light" name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,62 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+ion-item {
+  --ion-item-background: transparent;
+}
+.bold,.fw500 {
+  font-weight: 500 !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
+}
+
+.input-create{
+  padding-left: 7px;
+  padding-right: 7px;
+  background-color: var(--ion-color-primary);
+}
+
+.card-leyenda{
+  padding: 1px;
+}
+
+.card-delete{
+  background-color: var(--ion-color-tertiary);
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  right: 40px;
+}
+
+.card-reorder{
+  background-color: var(--ion-color-secondary);
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  right: 0px;
+}
+
+.icon-dm{
+  margin: 40% 30%;
+}
+
+.ion-fab-custom{
+  bottom: 1px;
+}
+
+.footer-toolbar{
+  height: 50px;
+}

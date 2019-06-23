@@ -1,0 +1,7 @@
+{
+  "name": "challenge-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
