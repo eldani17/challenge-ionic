@@ -88,13 +88,8 @@ export class HomePage {
     //guardo en localStorage el movimiento de manera automatica
     this.listService.saveList();
   }
-
-  printList(){
-    console.log(this.list);
-  }
   
   search(event){
-    console.log(event);
     this.textSearch = event.detail.value;
   }
 
