@@ -1,2 +1,8 @@
 # challenge-ionic
-proyecto en ionic
+Challenge Ionic.
+
+Clone.
+
+Npm install.
+
+Ionic Serve.
